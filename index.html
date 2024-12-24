@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обзорный сайт RDR2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="auth-overlay" class="overlay">
+        <form id="auth-form" class="auth-form">
+            <h2>Авторизация</h2>
+            <p class="form-info">
+                Пожалуйста, заполните форму, чтобы войти. Логин должен состоять из 4-10 символов (русские буквы или цифры).
+            </p>
+            <label for="username">Логин:</label>
+            <input type="text" id="username" name="username" required>
+            <span class="error" id="username-error"></span>
+            
+            <label for="birthdate">Дата рождения:</label>
+            <input type="date" id="birthdate" name="birthdate" required>
+            <span class="error" id="birthdate-error"></span>
+            
+            <label for="gender">Пол:</label>
+            <select id="gender" name="gender" required>
+                <option value="" disabled selected>Выберите</option>
+                <option value="male">Мужской</option>
+                <option value="female">Женский</option>
+            </select>
+            <span class="error" id="gender-error"></span>
+            
+            <button type="submit">Войти</button>
+        </form>
+    </div>
+    
+    <!-- Всплывающее окно ошибки -->
+    <div id="error-popup" class="popup hidden">
+        <p id="error-message"></p>
+        <button id="close-error-btn">Закрыть</button>
+    </div>
+    
+</div>
+
+<!-- Всплывающее окно ошибки -->
+<div id="error-popup" class="popup hidden">
+    <p id="error-message"></p>
+    <button id="close-error-btn">Закрыть</button>
+</div>
+
+        </form>
+    </div>
+    <header>
+        <div class="logo">RDR2</div>
+        <nav>
+            <ul id="menu">
+                <li><a href="#description" class="menu-item" data-section="description">Описание</a></li>
+                <li><a href="#glossary" class="menu-item" data-section="glossary">Словарь</a></li>
+                <li><a href="#gallery" class="menu-item" data-section="gallery">Галерея</a></li>
+                <li><a href="#test" class="menu-item" data-section="test">Тест</a></li>
+                <li><a href="#profile" class="menu-item" data-section="profile">Личный кабинет</a></li>
+            </ul>
+        </nav>
+        <div class="theme-switch">
+            <label for="theme-toggle">Тёмная тема</label>
+            <input type="checkbox" id="theme-toggle">
+        </div>
+    </header>    
+    <main>
+        <section id="description" class="content-section">
+            <h1>Описание</h1>
+            <p>Добро пожаловать в мир Red Dead Redemption 2...</p>
+        </section>
+        <section id="glossary" class="content-section">
+            <h1>Словарь</h1>
+            <input type="text" id="search" placeholder="Поиск по словарю...">
+            <ul id="glossary-list">
+                <li data-description="Местность в игре, где проходят события, напоминающая американский Дикий Запад, со всеми его особенностями, включая законы и культуру.">Дикий Запад</li>
+                <li data-description="Основная преступная группа в игре, в которой персонажи проводят большую часть времени, включая преступления, ограбления и другие активности.">Банда Ван дер Линде</li>
+                <li data-description="Приручённое животное, которое можно использовать для езды, перевозки грузов и в бою. Они встречаются в разных местах на протяжении игры.">Лошадь</li>
+                <li data-description="Игровая валюта, которая используется для покупок в магазинах, обмена и других нужд. Может быть добыта различными способами, включая ограбления и выполнение заданий.">Доллары</li>
+                <li data-description="Бывший друг и лидер банды Ван дер Линде, который разочарован в своём пути и решает действовать против системы, несмотря на прошлые связи с бандой.">Джон Марстон</li>
+                <li data-description="Жестокие преступники, которые оставляют за собой следы насилия и разрушений, часто преследуемые законами.">Охотники за головами</li>
+                <li data-description="Предмет, используемый для перемещения по территории на лошади, который защищает от холода и дождя.">Пальто</li>
+                <li data-description="Система в игре, которая отслеживает поведение персонажа и влияет на отношение к нему других NPC. Может быть хорошим или плохим.">Репутация</li>
+                <li data-description="Место, где можно спрятать украденные товары и организовать ограбления. Чаще всего используется бандитами.">Укрытие</li>
+                <li data-description="Ценная лошадь, имеющая хорошие характеристики и доступная для покупки в специальных магазинах.">Гонщик</li>
+            </ul>
+            <div id="term-description"></div>
+        </section>                      
+        <section id="gallery" class="content-section">
+            <h1>Галерея</h1>
+            <div id="slider">
+                <button id="prev-btn">Назад</button>
+                <img id="slider-image" src="image1.jpg" alt="Изображение 1">
+                <button id="next-btn">Вперед</button>
+            </div>
+            <p id="slider-info">1 из 5</p>
+        </section>        
+        <section id="test" class="content-section">
+            <h1>Тест</h1>
+            <form id="test-form">
+                <div class="question">
+                    <p>1. Кто является главным героем игры Red Dead Redemption 2?</p>
+                    <label for="q1">Введите имя героя:</label>
+                    <input type="text" id="q1" name="q1" required>
+                    <span class="feedback" id="q1-feedback"></span>
+                </div>
+        
+                <div class="question">
+                    <p>2. Как называется банда, к которой принадлежит главный герой?</p>
+                    <label for="q2">Введите название банды:</label>
+                    <input type="text" id="q2" name="q2" required>
+                    <span class="feedback" id="q2-feedback"></span>
+                </div>
+        
+                <div class="question">
+                    <p>3. Какое животное в игре используется как средство передвижения?</p>
+                    <input type="radio" id="q3a" name="q3" value="Лошадь" required>
+                    <label for="q3a">Лошадь</label>
+                    <input type="radio" id="q3b" name="q3" value="Коровы">
+                    <label for="q3b">Коровы</label>
+                    <span class="feedback" id="q3-feedback"></span>
+                </div>
+        
+                <div class="question">
+                    <p>4. Какую валюту можно использовать для покупок в игре?</p>
+                    <input type="radio" id="q4a" name="q4" value="Доллары" required>
+                    <label for="q4a">Доллары</label>
+                    <input type="radio" id="q4b" name="q4" value="Гроши">
+                    <label for="q4b">Гроши</label>
+                    <span class="feedback" id="q4-feedback"></span>
+                </div>
+        
+                <div class="question">
+                    <p>5. Какого персонажа играет Джон Марстон?</p>
+                    <input type="radio" id="q5a" name="q5" value="Андерсон">
+                    <label for="q5a">Андерсон</label>
+                    <input type="radio" id="q5b" name="q5" value="Марксон">
+                    <label for="q5b">Марксон</label>
+                    <span class="feedback" id="q5-feedback"></span>
+                </div>
+        
+                <div class="question">
+                    <p>6. Как называется главный город в игре?</p>
+                    <input type="radio" id="q6a" name="q6" value="Реднивилл" required>
+                    <label for="q6a">Реднивилл</label>
+                    <input type="radio" id="q6b" name="q6" value="Сент-Дени">
+                    <label for="q6b">Сент-Дени</label>
+                    <span class="feedback" id="q6-feedback"></span>
+                </div>
+        
+                <button type="button" id="submit-test">Проверить</button>
+                <button type="button" id="end-test" style="display:none;">Закончить тест</button>
+            </form>
+            <div id="test-result"></div>
+            <div id="test-report" style="display:none;"></div>
+        </section>        
+        <!-- Раздел личного кабинета -->
+        <section id="profile" class="content-section">
+            <h1>Личный кабинет</h1>
+            <p id="profile-info">Добро пожаловать, <span id="profile-username"></span>!</p>
+            <div id="test-results">
+                <h2>Результаты последнего теста:</h2>
+                <ul id="results-list">
+                    <!-- Здесь будут отображаться результаты теста -->
+                </ul>
+            </div>
+            <button id="profile-logout-btn">Выйти</button>
+        </section>        
+    </main>
+    <footer>
+        <p>Контактные данные:</p>
+        <p>Телефон: <a href="#">+7 (000) 000-00-00</a></p>
+        <p>Соц. сети: <a href="#">VK</a>, <a href="#">Instagram</a></p>
+        <p>© 2024 Обзорный сайт RDR2</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

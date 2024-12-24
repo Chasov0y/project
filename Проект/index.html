@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обзорный сайт RDR2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="auth-overlay" class="overlay">
+        <form id="auth-form" class="auth-form">
+            <h2>Авторизация</h2>
+            <label for="username">Логин:</label>
+            <input type="text" id="username" name="username" required minlength="4" maxlength="10" pattern="[А-Яа-я0-9]+">
+            <span class="error" id="username-error"></span>
+            <label for="birthdate">Дата рождения:</label>
+            <input type="date" id="birthdate" name="birthdate" required min="1950-01-01" max="">
+            <span class="error" id="birthdate-error"></span>
+            <label for="gender">Пол:</label>
+            <select id="gender" name="gender" required>
+                <option value="" disabled selected>Выберите</option>
+                <option value="male">Мужской</option>
+                <option value="female">Женский</option>
+            </select>
+            <span class="error" id="gender-error"></span>
+            <button type="submit">Войти</button>
+        </form>
+    </div>
+    <header>
+        <div class="logo">RDR2</div>
+        <nav>
+            <ul id="menu">
+                <li><a href="#description" class="menu-item" data-section="description">Описание</a></li>
+                <li><a href="#glossary" class="menu-item" data-section="glossary">Словарь</a></li>
+                <li><a href="#gallery" class="menu-item" data-section="gallery">Галерея</a></li>
+                <li><a href="#test" class="menu-item" data-section="test">Тест</a></li>
+                <li><a href="#profile" class="menu-item" data-section="profile">Личный кабинет</a></li>
+            </ul>
+        </nav>
+        <div id="user-info">
+            <span id="user-login"></span>
+            <button id="logout-btn">Выйти</button>
+        </div>
+    </header>
+    <main>
+        <section id="description" class="content-section">
+            <h1>Описание</h1>
+            <p>Добро пожаловать в мир Red Dead Redemption 2...</p>
+        </section>
+        <section id="glossary" class="content-section">
+            <h1>Словарь</h1>
+            <input type="text" id="search" placeholder="Поиск по словарю...">
+            <ul id="glossary-list">
+                <li data-description="Описание термина 1">Термин 1</li>
+                <li data-description="Описание термина 2">Термин 2</li>
+                <li data-description="Описание термина 3">Термин 3</li>
+                <!-- More terms -->
+            </ul>
+            <div id="term-description"></div>
+        </section>
+        <section id="gallery" class="content-section">
+            <h1>Галерея</h1>
+            <div id="slider">
+                <button id="prev-btn">Назад</button>
+                <img id="slider-image" src="image1.jpg" alt="">
+                <button id="next-btn">Вперед</button>
+            </div>
+            <p id="slider-info">1 слайд из 5</p>
+        </section>
+        <section id="test" class="content-section">
+            <h1>Тест</h1>
+            <form id="test-form">
+                <div class="question">
+                    <p>Вопрос 1:</p>
+                    <input type="text" name="q1" required>
+                    <span class="feedback"></span>
+                </div>
+                <!-- More questions -->
+                <button type="button" id="submit-test">Проверить</button>
+            </form>
+            <div id="test-result"></div>
+        </section>
+        <section id="profile" class="content-section">
+            <h1>Личный кабинет</h1>
+            <p id="profile-info"></p>
+            <button id="profile-logout-btn">Выйти</button>
+        </section>
+    </main>
+    <footer>
+        <p>Контактные данные:</p>
+        <p>Телефон: <a href="#">+7 (000) 000-00-00</a></p>
+        <p>Соц. сети: <a href="#">VK</a>, <a href="#">Instagram</a></p>
+        <p>© 2024 Обзорный сайт RDR2</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
